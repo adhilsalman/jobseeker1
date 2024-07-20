@@ -1,0 +1,52 @@
+{% extends 'user/base.html' %}
+
+{%load static%}
+
+{% block bodyblock %}
+
+{% for i in data %}
+<div class="card mb-3 w-75  ">
+    <div class="row g-0">
+        <div class="col-md-4 m-3">
+
+            <img src="{{ i.jobs.poster.url }}" class="img-fluid rounded-start" alt="...">
+
+        </div>
+        <div class="col-md-5">
+            <div class="card-body">
+
+
+                <h5 class="card-title">Role :{{i.jobs.jobname}}</h5>
+                <h5 class="card-title">Company Name :{{i.jobs.company_name}}</h5>
+                
+
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <a href="{% url  'deljob' i.id %}" class="btn btn-primary my-2 ">Delete</a>
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
+{%endfor%}
+
+{%endblock%}
+
+
+
+
+<!-- <div class="row">
+    {% for i in data %}
+    <div class="col-md-3 mb-4">
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{i.jobs.poster.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text"> {{i.student.email}} Some quick example text to build on the card title and make up the
+                    bulk of the card's content.</p>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div> -->

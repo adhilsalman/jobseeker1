@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{%block mainblock%}
+
+<div class="container my-5">
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title fw-bold text-center">{{username.request.data}}</h5>
+            <p class="card-text text-center">{{data.email}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Qualification: {{data.qualification}}</li>
+            <li class="list-group-item">Skills: {{data.skill}}</li>
+            <li class="list-group-item">Experience: {{data.experience}}</li>
+            
+        </ul>
+        <div class="card-body">
+            <a href="data.resume.url" download="" class="card-link btn btn-dark btn-sm"> Resume Download</a>
+            
+        </div>
+    </div>
+    </div>
+    
+
+{% endblock %}

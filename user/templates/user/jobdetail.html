@@ -1,0 +1,40 @@
+{%extends "user/base.html"%}
+{%block bodyblock%}
+
+<div class="card mt-5" style="width:88%;">
+    <div class="row">
+        <div class="col-4 d-flex align-items-center">
+            {%if data.poster%}
+            <img src="{{data.poster.url}}" class="img-fluid rounded-start" alt="...">
+            {%endif%}
+        </div>
+        <div class="col-8">
+            <div class="card-body">
+                <div class="card-title fw-bolder">
+                    {{data.jobname}}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> Company :{{data.company_name}}</li>
+                    <li class="list-group-item"> Category :{{data.category}}</li>
+                    <li class="list-group-item"> Experience :{{data.experience}}</li>
+                    <li class="list-group-item"> Skills Req :{{data.skill}}</li>
+                    <li class="list-group-item"> Salary :{{data.salary}}</li>
+                    <li class="list-group-item"> Qualification :{{data.qualification}}</li>
+                    
+                    
+
+                </ul>
+                <div class="card-body d-flex justify-content-center">
+                    <form action="{% url 'apply' data.id %}" method="post">
+                        {%csrf_token%}
+                        <button type="submit" class="btn btn-outline-primary"> Apply Now</button>
+                    </form>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+
+{%block mainblock%}
+{% for i in data %}
+
+
+<div class="card mb-3 w-75  ">
+    <div class="row g-0">
+        <div class="col-md-4 m-3">
+
+            <img src="{{ i.jobs.poster.url }}" class="img-fluid rounded-start" alt="...">
+
+        </div>
+        <div class="col-md-5">
+            <div class="card-body">
+
+
+                <h2 class="card-title">Seeker :{{i.student}}</h2>
+                <h5 class="card-title">Role :{{i.jobs.jobname}}</h5>
+
+
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                 <a href="{% url  'hrview' i.student.id %}" class="btn btn-primary my-2 ">Seeker details</a> <!--cant see the seeker detail because of url -->
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+{%endfor%}
+
+{% endblock %}
+
+<!-- {% for i in data %}
+{{i.jobs}}
+{{i.student}}
+{%endfor%} -->
